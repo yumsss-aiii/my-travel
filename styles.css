@@ -1,0 +1,468 @@
+/* 通用设置 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; /* 海洋主题蓝色背景 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 页面容器 */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题样式 */
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #00796b; /* 深蓝色 */
+    margin-bottom: 20px;
+}
+
+/* 目的地列表项样式 */
+#destination-list {
+    list-style: none;
+    padding: 0;
+}
+
+#destination-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 目的地名称 */
+.destination-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00796b; /* 深蓝色 */
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+/* 删除按钮样式 */
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    color: #d32f2f; /* 删除按钮颜色为红色 */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    color: #c2185b; /* 悬浮时变为深红色 */
+}
+
+/* 添加目的地按钮样式 */
+#add-destination {
+    width: 100%;
+    padding: 10px;
+    background-color: #00796b; /* 蓝绿色 */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#add-destination:hover {
+    background-color: #004d40; /* 深色悬浮效果 */
+}
+
+
+/* 自定义删除确认模态框样式 */
+.modal {
+     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* 确保在最上层 */
+    justify-content: center;
+    align-items: flex-start; /* 顶部对齐 */
+    padding-top: 20%;
+}
+
+.modal-content {
+   background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* 宽度占屏幕的80% */
+    max-width: 400px; /* 最大宽度限制 */
+    margin: auto; /* 内容居中 */
+    text-align: center; /* 文字居中 */
+}
+
+.modal button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%; /* 按钮宽度填满 */
+}
+
+.modal button:hover {
+    background-color: #004d40;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-actions {
+    display: flex;
+    flex-start: top;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    background-color: #4ecdc4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-actions button:hover {
+    background-color: #38b8a1;
+}
+
+/* 背景色可以根据设计修改 */
+.back-btn:hover {
+    color:#00796b; /* 设置鼠标悬浮时的文字颜色 */
+}
+/* 返回按钮样式 */
+.back-btn {
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color:#00796b;
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 10; /* 确保返回按钮位于最上层 */
+}
+
+/* 悬浮色块 */
+.back-hover {
+    position: fixed;
+    top: 35px; /* 设置色块位置距离返回按钮的下方 */
+    left: 10px;
+    width: 40px; /* 色块的宽度 */
+    height: 5px; /* 色块的高度 */
+    background-color: #000; /* 初始为黑色背景 */
+    transition: width 0.3s ease, background-color 0.3s ease; /* 添加过渡效果 */
+    z-index: 9; /* 确保色块位于按钮下方 */
+}
+
+/* 鼠标悬浮在返回按钮上的样式 */
+.back-btn:hover + .back-hover {
+    width: 100px; /* 当鼠标悬浮时，色块扩展 */
+    background-color: #4CAF50; /* 当鼠标悬浮时，色块变为绿色 */
+}
+
+.back-btn:hover {
+    color: #a0a0a0; /* 修改返回按钮文字颜色 */
+}
+/* 添加天数按钮样式 */
+#add-day {
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b; /* 蓝绿色背景 */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px; /* 圆角 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 添加过渡效果 */
+}
+
+/* 鼠标悬浮效果 */
+#add-day:hover {
+    background-color: #004d40; /* 悬浮时的颜色 */
+    transform: scale(1.05); /* 悬浮时按钮稍微放大 */
+}
+
+/* 鼠标点击效果 */
+#add-day:active {
+    background-color: #004d40; /* 点击时的颜色 */
+    transform: scale(0.98); /* 点击时稍微缩小 */
+}
+/* 天数列表项样式，类似于目的地列表项 */
+#day-list {
+    list-style: none;
+    padding: 0;
+}
+
+#day-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 天数名称 */
+.day-name {
+    font-size: 20px; /* 字体大小与目的地名称一致 */
+    font-weight: bold; /* 加粗 */
+    color: #00796b; /* 和目的地名称一致的颜色 */
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+
+/* 删除按钮样式 */
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    color: #d32f2f; /* 删除按钮颜色为红色 */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    color: #c2185b; /* 悬浮时变为深红色 */
+}
+/* 修改 input 元素的样式，使其与目的地名称一致 */
+.day-name-input {
+    font-size: 20px; /* 字体大小与目的地名称一致 */
+    font-weight: bold; /* 加粗 */
+    color: #00796b; /* 与目的地名称一致的颜色 */
+    border: none; /* 去除输入框的边框 */
+    background-color: transparent; /* 背景色透明 */
+    width: auto; /* 根据内容宽度自动调整 */
+    max-width: 200px;
+    padding: 0; /* 去除内边距 */
+    flex-grow: 1; /* 让它占据剩余的空间 */
+}
+/* 顶部弹窗专用样式 */
+.top-modal {
+    align-items: flex-start; /* 把弹窗放在顶部 */
+    padding-top: 20%; /* 距离顶部20%的位置 */
+}
+
+.top-modal .modal-content {
+    background: #fff;
+    border-radius: 0 0 15px 15px; /* 底部圆角 */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: none; /* 宽度铺满屏幕 */
+    margin-top: 0;
+    animation: slideDown 0.3s ease-out; /* 下滑动画 */
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+/* 添加行程按钮样式 */
+body #add-activity {
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b; /* 蓝绿色背景 */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px; /* 圆角 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 添加过渡效果 */
+}
+
+/* 鼠标悬浮效果 */
+#add-activity:hover {
+    background-color: #004d40; /* 悬浮时的颜色 */
+    transform: scale(1.05); /* 悬浮时按钮稍微放大 */
+}
+
+/* 鼠标点击效果 */
+#add-activity:active {
+    background-color: #004d40; /* 点击时的颜色 */
+    transform: scale(0.98); /* 点击时稍微缩小 */
+}
+/* 行程列表项样式，类似于目的地列表项 */
+#activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+#activity-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 添加细节按钮样式 */
+body #add-detail {
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b; /* 蓝绿色背景 */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px; /* 圆角 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 添加过渡效果 */
+}
+
+/* 鼠标悬浮效果 */
+#add-detail:hover {
+    background-color: #004d40; /* 悬浮时的颜色 */
+    transform: scale(1.05); /* 悬浮时按钮稍微放大 */
+}
+
+/* 鼠标点击效果 */
+#add-detail:active {
+    background-color: #004d40; /* 点击时的颜色 */
+    transform: scale(0.98); /* 点击时稍微缩小 */
+}
+/* 行程列表项样式，类似于目的地列表项 */
+#detail-list {
+    list-style: none;
+    padding: 0;
+}
+
+#detail-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* 每个内容项的样式 */
+.content-item {
+    margin-bottom: 20px; /* 每个内容项之间的间距 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* 每个输入框、textarea、文件上传框都占一行 */
+.content-item input[type="text"],
+.content-item textarea,
+.content-item input[type="file"] {
+    width: 100%; /* 让每个输入框占满一整行 */
+    padding: 8px;
+    margin-bottom: 10px; /* 每个输入框的下边距 */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* 图片预览样式 */
+.content-item div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* 删除按钮样式 */
+.content-item button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content-item button:hover {
+    background-color: #c2185b;
+}
+
+/* 确保按钮样式 */
+button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* 为容器设置间距 */
+#content-container {
+    padding: 20px;
+}
+
+/* 为内容容器设置最大宽度 */
+#content-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 使用flexbox来将按钮居中 */
+#add-new-content {
+  position: fixed;      
+    display: block; /* 使按钮为块级元素 */
+    width: 100px; /* 设置按钮的宽度，可以根据需要调整 */
+    padding: 10px; /* 给按钮添加内边距 */
+    background-color: #00796b; /* 保持原本的颜色 */
+    color: white;
+    font-size: 16px; /* 保持原本的大小 */
+    border: none;
+    border-radius: 5px; /* 添加圆角 */
+    text-align: center; /* 确保按钮文本居中 */
+    cursor: pointer;
+    position: fixed; /* 固定定位 */
+    top: 2%; /* 从屏幕顶部50%的位置开始 */
+    left: 85%; /* 从屏幕左边50%的位置开始 */
+    transform: translate(-50%, -50%); /* 将按钮本身的中心与页面的中心对齐 */
+ }
+
+/* 鼠标悬浮时 */
+#add-new-content:hover {
+    background-color: #004d40; /* 悬浮时颜色 */
+    transform: scale(1.05) translate(-50%, -50%); /* 增加按钮放大效果 */
+}
+
+/* 鼠标点击时 */
+#add-new-content:active {
+    background-color: #004d40; /* 点击时颜色 */
+    transform: scale(0.98) translate(-50%, -50%); /* 点击时缩小效果 */
+}
+

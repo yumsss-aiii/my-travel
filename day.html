@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行程天数</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+<a class="back-btn" onclick="window.history.back()">返回</a>
+<div class="back-hover"></div>
+    <div class="container">
+        <h1 id="destination-name"></h1>
+        <button id="add-day">添加天数</button>
+        <ul id="day-list"></ul>
+    </div>
+
+<!-- 在 body 的末尾，container 的外面添加以下代码 -->
+<!-- 删除确认弹窗 -->
+<div id="delete-modal" class="modal top-modal">
+    <div class="modal-content">
+        <h2>确认删除</h2>
+        <p>确定要删除该天数吗？</p>
+        <div class="modal-actions">
+            <button id="confirm-delete">确认</button>
+            <button id="cancel-delete">取消</button>
+        </div>
+    </div>
+</div>
+
+<!-- 新增天数弹窗 -->
+<div id="add-day-modal" class="modal top-modal">
+    <div class="modal-content">
+        <h2>添加新天数</h2>
+        <input type="text" id="day-name-input" placeholder="请输入天数名称">
+        <div class="modal-actions">
+            <button id="confirm-add-day">确认</button>
+            <button id="cancel-add-day">取消</button>
+        </div>
+    </div>
+</div>
+
+
+    <script src="day.js"></script>
+</body>
+</html>

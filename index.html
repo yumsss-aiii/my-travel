@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游攻略</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="container">
+        <h1>旅游攻略</h1>
+        <button id="add-destination">添加目的地</button>
+        <ul id="destination-list"></ul>  <!-- 用于展示目的地的列表 -->
+    </div>
+
+    <!-- 自定义删除确认模态框 -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <p>确定要删除吗？</p>
+            <button id="confirm-delete">确定</button>
+            <button id="cancel-delete">取消</button>
+        </div>
+    </div>
+<!-- 新增目的地模态框 -->
+<div id="add-destination-modal" class="modal">
+    <div class="modal-content">
+        <h2>请输入目的地名称</h2>
+        <input type="text" id="destination-name-input" placeholder="目的地名称" />
+        <div class="modal-actions">
+            <button id="confirm-add">确认</button>
+            <button id="cancel-add">取消</button>
+        </div>
+    </div>
+</div>
+
+    <script src="app.js"></script>  <!-- 引入外部 JS 文件，包含了目的地的添加和删除逻辑 -->
+</body>
+</html>

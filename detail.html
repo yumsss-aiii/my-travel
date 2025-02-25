@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加活动</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+<a class="back-btn" onclick="window.history.back()">返回</a>
+<div class="back-hover"></div>
+    <div class="container">
+        <h1 id="day-name"></h1>
+        <button id="add-activity">添加行程</button>
+        <ul id="activity-list"></ul>
+    </div>
+
+<div id="delete-modal" class="modal top-modal">
+    <div class="modal-content">
+        <h2>确认删除</h2>
+        <p>确定要删除该行程吗？</p>
+        <div class="modal-actions">
+            <button id="confirm-delete">确认</button>
+            <button id="cancel-delete">取消</button>
+        </div>
+    </div>
+</div>
+
+<!-- 保存确认弹窗 -->
+<div id="save-modal" class="modal">
+    <div class="modal-content">
+        <h2>确认保存</h2>
+        <p>确定要保存所有更改吗？</p>
+        <div class="modal-actions">
+            <button id="confirm-save">确认保存</button>
+            <button id="cancel-save">取消</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="detail.js"></script>
+</body>
+</html>

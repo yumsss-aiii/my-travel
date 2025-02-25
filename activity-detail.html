@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动详情</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="back-btn" onclick="window.history.back()">返回</a>
+<div class="back-hover"></div>
+
+        <h1 id="detail-name"></h1>
+         <!-- 添加新内容按钮 -->
+        <button id="add-new-content">添加新内容</button>
+        <ul id="detail-list"></ul>
+
+<!-- 确认删除弹窗 -->
+<div id="delete-modal" class="modal">
+    <div class="modal-content">
+        <h2>确认删除</h2>
+        <p>确定要删除该内容吗？</p>
+        <div class="modal-actions">
+            <button id="confirm-delete">确认</button>
+            <button id="cancel-delete">取消</button>
+        </div>
+    </div>
+</div>
+
+
+ <div id="save-modal" class="modal">
+        <div class="modal-content">
+            <h2>确认保存</h2>
+            <p>确定要保存所有更改吗？</p>
+            <div class="modal-actions">
+                <button id="confirm-save">确认保存</button>
+                <button id="cancel-save">取消</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 动态内容容器 -->
+    <div id="content-container"></div>
+
+    <!-- 保存按钮 -->
+    <button id="save-activity">保存活动</button>
+
+    <script src="activity-detail.js"></script>
+</body>
+</html>
